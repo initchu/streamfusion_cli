@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB.svg)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-2ea44f.svg)](#)
 
-一个面向命令行的多数据源视频聚合工具：并行搜索、交互选择分组/分集、优先使用 ffmpeg 下载 m3u8，内置简易下载器兜底。
+一个面向命令行的多数据源视频聚合工具：并行搜索、交互选择分组/分集、优先使用 ffmpeg 下载 m3u8，同时内置简易下载器。
 
 ---
 
