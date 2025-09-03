@@ -89,6 +89,12 @@ python streamfusion_cli.py -q "三体" -s dyttzy -v
 
 # 指定输出文件名（单集）
 python streamfusion_cli.py -q "三体" -o out/videos/三体.mp4 -v
+
+# 安静模式（仅显示进度条与错误）：
+python streamfusion_cli.py -q "三体" -Q
+
+# 网络不稳定或对端证书异常时：
+python streamfusion_cli.py -q "三体" --insecure --timeout 15 --workers 6 -Q
 ```
 
 行为约定：
@@ -104,6 +110,10 @@ python streamfusion_cli.py -q "三体" -o out/videos/三体.mp4 -v
 -c, --config    配置文件路径，默认 ./config.json
 -v, --verbose   打印详细过程
 -s, --site      指定站点 key（来源于 config.json 的 api_site）
+-w, --workers   下载线程数，默认 8（建议 4–12 之间）
+-t, --timeout   请求超时（秒），默认 10（可按网络情况调整）
+-Q, --quiet     安静模式，仅错误输出；保留单行进度条
+    --insecure  跳过 HTTPS 证书校验（不安全，仅在必要时使用）
 ```
 
 ### 使用示例
@@ -123,7 +133,7 @@ python streamfusion_cli.py -q "初吻" -s dyttzy -v
 3) 指定输出路径并整组下载：
 
 ```bash
-python streamfusion_cli.py -q "某剧名" -o out/目标.mp4 -v
+python streamfusion_cli.py -q "以法之名" -o out/以法之名 -v
 ```
 
 ### 交互与输出
@@ -132,7 +142,7 @@ python streamfusion_cli.py -q "某剧名" -o out/目标.mp4 -v
 - 分组/分集：先选分组（不同播放器/清晰度），再选分集；可选择 `A` 一键整组下载
 - 进度显示：
   - ffmpeg：透传原生日志
-  - 内置下载器：片段数、百分比、累计 MB、实时速度
+  - 内置下载器（默认）：单行进度条展示百分比、累计 MB、实时速度与分片计数
 
 ### 常见问题（FAQ）
 
@@ -144,3 +154,7 @@ python streamfusion_cli.py -q "某剧名" -o out/目标.mp4 -v
   - 换用更简短的关键词或别名。
 - 下载速度慢？
   - 更换站点，或在交互中选用不同分组（清晰度/线路）。
+  - 适当提高 `--workers`（如 8→12），或在被限速时降低（如 8→4）。
+  - 增大 `--timeout` 以适配抖动网络。
+ - 出现 SSL 相关错误（如 SSLEOFError）？
+  - 可临时加 `--insecure` 绕过证书校验，并结合 `--timeout`、调整 `--workers`；建议仅在必要时使用。

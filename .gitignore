@@ -1,6 +1,7 @@
 # 忽略 Python 虚拟环境目录
 venv/
 downloads/
+results/
 
 # 忽略 Python 缓存
 __pycache__/
