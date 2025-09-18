@@ -158,3 +158,7 @@ python streamfusion_cli.py -q "以法之名" -o out/以法之名 -v
   - 增大 `--timeout` 以适配抖动网络。
  - 出现 SSL 相关错误（如 SSLEOFError）？
   - 可临时加 `--insecure` 绕过证书校验，并结合 `--timeout`、调整 `--workers`；建议仅在必要时使用。
+
+- streamfusion_cli.py -q "生万物" -v
+
+![image-20250918175740175](README.assets/image-20250918175740175.png)
