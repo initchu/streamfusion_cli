@@ -149,16 +149,20 @@ python streamfusion_cli.py -q "以法之名" -o out/以法之名 -v
 - 403 Forbidden？
   - 已默认设置浏览器 UA 并自动带 Referer。若仍失败，请在站点配置中补充 `detail` 域名，或更换站点。
   - 推荐安装 `ffmpeg` 提升兼容性。
+  
 - 搜不到结果？
   - 在 `config.json` 的 `api_site` 中添加更多站点。
   - 换用更简短的关键词或别名。
+  
 - 下载速度慢？
   - 更换站点，或在交互中选用不同分组（清晰度/线路）。
   - 适当提高 `--workers`（如 8→12），或在被限速时降低（如 8→4）。
   - 增大 `--timeout` 以适配抖动网络。
+  
  - 出现 SSL 相关错误（如 SSLEOFError）？
+
   - 可临时加 `--insecure` 绕过证书校验，并结合 `--timeout`、调整 `--workers`；建议仅在必要时使用。
 
 - streamfusion_cli.py -q "生万物" -v
 
-![image-20250918175740175](README.assets/image-20250918175740175.png)
+  ![image-20250918175740175](README.assets/image-20250918175740175-1758189966991-2.png)
