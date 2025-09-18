@@ -1027,7 +1027,7 @@ def run(output: Optional[str], config_path: str, verbose: bool, site_key_opt: Op
 
 
 def main():
-    parser = argparse.ArgumentParser(description="MoonTV 风格数据源的视频搜索与下载工具")
+    parser = argparse.ArgumentParser(description="全网视频搜索与下载工具 By Chuchengzhi")
     parser.add_argument("-q", "--query", required=True, help="搜索关键字，支持模糊搜索")
     parser.add_argument("-o", "--output", help="输出文件名，默认使用影片名.mp4")
     parser.add_argument("-c", "--config", default="config.json", help="配置文件路径，默认当前目录 config.json")
